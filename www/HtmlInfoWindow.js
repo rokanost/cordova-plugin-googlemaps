@@ -223,13 +223,6 @@ var HTMLInfoWindow = function () {
       }
     }
 
-    var cssOptions = self.get('cssOptions');
-    if (cssOptions && typeof cssOptions === 'object') {
-      var keys = Object.keys(cssOptions);
-      keys.forEach(function (key) {
-        contentBox.style.setProperty(key, cssOptions[key]);
-      });
-    }
     // Insert the contents to this HTMLInfoWindow
     if (!anchorDiv.parentNode) {
       map._layers.info.appendChild(anchorDiv);
@@ -251,6 +244,14 @@ var HTMLInfoWindow = function () {
     contentBox.style.height = '100%';
     contentBox.style.padding = '5px 17px 17px 5px';
     self.set('contentsWidth', contentsWidth);
+    
+    var cssOptions = self.get('cssOptions');
+    if (cssOptions && typeof cssOptions === 'object') {
+      var keys = Object.keys(cssOptions);
+      keys.forEach(function (key) {
+        contentBox.style.setProperty(key, cssOptions[key]);
+      });
+    }
 
     var infoOffset = {
       x: 31,
