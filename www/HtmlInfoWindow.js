@@ -242,7 +242,7 @@ var HTMLInfoWindow = function () {
     }
     contentBox.style.width = '100%';
     contentBox.style.height = '100%';
-    contentBox.style.padding = '5px 17px 17px 5px';
+    contentBox.style.padding = '5px';
     self.set('contentsWidth', contentsWidth);
     
     var cssOptions = self.get('cssOptions');
